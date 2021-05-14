@@ -29,9 +29,9 @@ app.use('/api/todo',require('./router/busquedas.router'))
 app.use('/api/subir',require('./router/subir.router'))
 
 //Cualquier otra ruta va a pasar por aqui
-app.get('*', (req,res)=>{
-    res.sendFile(path.resolve(__dirname, 'public/index.html'));
-})
+// app.get('*', (req,res)=>{
+//     res.sendFile(path.resolve(__dirname, 'public/index.html'));
+// })
 
 
 
