@@ -8,6 +8,9 @@ const MedicoSchema=Schema({
     img:{
         type:String
     },
+    email:{
+        type:String
+    },
     usuario:{
         type:Schema.Types.ObjectId,
         ref:'Usuario',

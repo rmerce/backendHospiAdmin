@@ -27,6 +27,13 @@ app.use('/api/hospitales',require('./router/hopitales.router'))
 app.use('/api/medicos',require('./router/medicos.router'))
 app.use('/api/todo',require('./router/busquedas.router'))
 app.use('/api/subir',require('./router/subir.router'))
+app.use('/api/enviarcorreo',require('./router/enviarmail.router'))
+app.use('/api/guardarmails',require('./router/envio.router'))
+app.use('/api/horario',require('./router/horario.router'))
+app.use('/api/horas', require('./router/horas.router'))
+app.use('/api/diassemana', require('./router/diasemana.router'))
+app.use('/api/tipoconsulta', require('./router/tipoconsulta.router'))
+
 
 //Cualquier otra ruta va a pasar por aqui
 app.get('*', (req,res)=>{

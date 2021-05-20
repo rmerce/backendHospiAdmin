@@ -38,13 +38,16 @@ const get1Medico = async(req,res=response)=>{
 }
 
 const crearMedico = async (req,res=response)=>{
+    
     const id=req.id
     const medico=new Medico({
         usuario:id,
         ...req.body});
-  
+    
     try{
+       
        const MedicoDb=await medico.save()
+
         res.json({
             ok:true,
             medico: MedicoDb
@@ -66,6 +69,7 @@ const actualizarMedico =async(req,res=response)=>{
         const idUsuario=req.id
 
         const MedicoDb=await Medico.findById(MedicoId)
+        
         if(!MedicoDb)
         {
             return res.status(404).json({
@@ -79,6 +83,7 @@ const actualizarMedico =async(req,res=response)=>{
             ...req.body,
             usuario:idUsuario
         }
+      
         const medicoActualizado= await Medico.findByIdAndUpdate(MedicoId,cambiosMedico,{new:true});
         res.json({
             ok:true,
